@@ -126,7 +126,7 @@ check: fixer-check rector-check composer-validate composer-normalize-check deps-
 .PHONY: check
 
 compile: ## Compile descriptor types from third_party/protobuf
-	protoc -I./third_party/protobuf/src \
+	protoc \
 	    --plugin=protoc-gen-custom-plugin=/usr/local/bin/protoc-gen-php \
 	    google/protobuf/descriptor.proto \
 	    --custom-plugin_out=src_path=.:src

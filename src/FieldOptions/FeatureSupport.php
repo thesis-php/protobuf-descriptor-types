@@ -32,8 +32,6 @@ final readonly class FeatureSupport
      * @param ?\Google\Protobuf\Edition $editionRemoved The edition this feature is no longer available in.  In editions after
      * this one, the last default assigned will be used, and proto files will
      * not be able to override it.
-     * @param ?string $removalError The removal error text if this feature is used after the edition it was
-     * removed in.
      */
     public function __construct(
         #[Reflection\Field(1, new Reflection\EnumT(\Google\Protobuf\Edition::class))]
@@ -44,7 +42,5 @@ final readonly class FeatureSupport
         public ?string $deprecationWarning = null,
         #[Reflection\Field(4, new Reflection\EnumT(\Google\Protobuf\Edition::class))]
         public ?\Google\Protobuf\Edition $editionRemoved = null,
-        #[Reflection\Field(5, Reflection\StringT::T)]
-        public ?string $removalError = null,
     ) {}
 }

@@ -45,9 +45,6 @@ enum Edition: int
     case EDITION_2023 = 1000;
     case EDITION_2024 = 1001;
 
-    /** A placeholder edition for developing and testing unscheduled features. */
-    case EDITION_UNSTABLE = 9999;
-
     /**
      * Placeholder editions for testing feature resolution.  These should not be
      * used or relied on outside of tests.
