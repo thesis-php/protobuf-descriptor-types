@@ -1,6 +1,6 @@
-# Thesis Protobuf Descriptor Types
+## Generated types for protocol buffers reflection.
 
-## Installation
+### Installation
 
 ```shell
 composer require thesis/protobuf-descriptor-types
