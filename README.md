@@ -1,7 +1,7 @@
-# Thesis Repository Template
+# Thesis Protobuf Descriptor Types
 
-## Usage
+## Installation
 
-1. Create a new repository using this template.
-2. Clone it.
-3. Run `make` to scaffold the project.
+```shell
+composer require thesis/protobuf-descriptor-types
+```
