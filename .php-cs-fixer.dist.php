@@ -25,6 +25,7 @@ new PhpCsFixerCodingStandard()->applyTo($config, [
     'phpdoc_trim_consecutive_blank_line_separation' => false,
     'self_accessor' => false,
     'numeric_literal_separator' => false,
+    'global_namespace_import' => false,
 ]);
 
 return $config;

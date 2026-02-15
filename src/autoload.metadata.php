@@ -5,14 +5,10 @@
  * Versions:
  *   thesis/protoc-plugin — v0.1.5
  *   protoc               — v6.33.5
- * Source: google/protobuf/descriptor.proto
  */
 
 declare(strict_types=1);
 
-namespace Google\Protobuf\FeatureSet;
-
-/**
- * @api
- */
-final readonly class VisibilityFeature {}
+\Thesis\Protobuf\Pool\Registry::get()->register(
+    new \Thesis\Protobuf\Pool\OnceRegistrar(new \Google\Protobuf\GoogleProtobufDescriptorDescriptorRegistry()),
+);
