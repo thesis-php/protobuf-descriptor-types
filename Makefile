@@ -122,14 +122,18 @@ composer-normalize-check: ## Check that composer.json is normalized
 fix: fixer rector composer-normalize ## Run all fixing recipes
 .PHONY: fix
 
-check: fixer-check rector-check composer-validate composer-normalize-check deps-analyze phpstan  ## Run all project checks
+check: fixer-check rector-check composer-validate composer-normalize-check deps-analyze phpstan ## Run all project checks
 .PHONY: check
 
-compile: ## Compile descriptor types.
-	protoc \
-	    --plugin=protoc-gen-custom-plugin=/usr/local/bin/protoc-gen-php \
-	    google/protobuf/descriptor.proto \
-	    --custom-plugin_out=src_path=.:src
+compile: ## Compile descriptor types
+	$(DOCKER) run --rm \
+		--pull always \
+        --user 1000:1000 \
+        -v $(PWD):/workspace \
+        -w /workspace \
+        ghcr.io/thesis-php/protoc-plugin:latest \
+        --php-plugin_out=src_path=.:src \
+		google/protobuf/descriptor.proto
 .PHONY: compile
 
 # -----------------------
