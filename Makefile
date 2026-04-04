@@ -128,7 +128,7 @@ check: fixer-check rector-check composer-validate composer-normalize-check deps-
 compile: ## Compile descriptor types
 	$(DOCKER) run --rm \
 		--pull always \
-        --user 1000:1000 \
+        --user $(CONTAINER_USER) \
         -v $(PWD):/workspace \
         -w /workspace \
         ghcr.io/thesis-php/protoc-plugin:latest \
