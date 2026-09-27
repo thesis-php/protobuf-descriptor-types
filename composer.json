@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Google\\Protobuf\\": "src/"
+            "Thesis\\Google\\Protobuf\\": "src/"
         },
         "files": [
             "src/autoload.metadata.php"
